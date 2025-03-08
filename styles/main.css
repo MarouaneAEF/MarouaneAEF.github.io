@@ -157,10 +157,12 @@ h3 {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 4rem;
-    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    text-align: left;
 }
 
 .about-image img {
@@ -245,9 +247,15 @@ h3 {
 }
 
 .portfolio-item {
+    background: var(--light-background);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
 }
 
 .portfolio-item img {
@@ -257,8 +265,18 @@ h3 {
 }
 
 .portfolio-info {
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--background);
+}
+
+.portfolio-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.portfolio-info p {
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
 }
 
 .tech-stack {
