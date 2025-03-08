@@ -315,52 +315,24 @@ h3 {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.contact-form {
-    display: grid;
-    gap: 1.5rem;
+.contact-info {
+    padding: 2rem;
+    background: var(--background);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.contact-details {
+    margin-top: 2rem;
 }
 
-.form-group label {
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.submit-button {
-    padding: 1rem 2rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.submit-button:hover {
-    background: var(--secondary-color);
+.email-contact {
+    font-size: 1.2rem;
 }
 
 .contact-details a {
