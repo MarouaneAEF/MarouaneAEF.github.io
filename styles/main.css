@@ -345,6 +345,18 @@ h3 {
     color: var(--secondary-color);
 }
 
+.email-text {
+    font-size: 1.2rem;
+    color: #4a90e2;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    display: inline-block;
+    cursor: text;
+    user-select: all;
+}
+
 /* Footer */
 .footer {
     padding: 2rem 0;
