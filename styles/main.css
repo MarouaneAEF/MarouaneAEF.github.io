@@ -363,6 +363,16 @@ h3 {
     background: var(--secondary-color);
 }
 
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-details a:hover {
+    color: var(--secondary-color);
+}
+
 /* Footer */
 .footer {
     padding: 2rem 0;
@@ -373,6 +383,16 @@ h3 {
 .footer-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.footer-separator {
+    margin: 0 1rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-links {
+    display: flex;
     align-items: center;
 }
 
@@ -431,5 +451,15 @@ h3 {
     .services-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
     }
 } 
