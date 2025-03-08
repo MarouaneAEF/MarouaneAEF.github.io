@@ -43,7 +43,7 @@ A responsive personal portfolio website, showcasing professional experience, ski
    - Push the repository to GitHub
    - Go to repository settings
    - Enable GitHub Pages from the main branch
-   - Your site will be available at `https://MarouaneAEF.github.io`
+   - Your site will be available at `https://marouane.ait-el-faqir.github.io`
 
 ## Customization
 
