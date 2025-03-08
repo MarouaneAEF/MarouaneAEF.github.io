@@ -3,16 +3,18 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navLinksItems = document.querySelectorAll('.nav-links a');
 
-hamburger.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    hamburger.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a nav link
 navLinksItems.forEach(item => {
     item.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            navLinks.style.display = 'none';
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
             hamburger.classList.remove('active');
         }
     });
@@ -47,6 +49,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
         }
+    });
+});
+
+// Scroll to top button
+const scrollTopButton = document.getElementById('scroll-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollTopButton.classList.add('visible');
+    } else {
+        scrollTopButton.classList.remove('visible');
+    }
+});
+
+scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 });
 
