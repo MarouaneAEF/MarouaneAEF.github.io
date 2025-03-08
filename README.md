@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-A modern, responsive personal portfolio website for Marouane Ait El Faqir, showcasing professional experience, skills, and projects in machine learning and data science.
+A responsive personal portfolio website, showcasing professional experience, skills, and projects in machine learning and data science.
 
 ## Features
 
@@ -22,11 +22,7 @@ A modern, responsive personal portfolio website for Marouane Ait El Faqir, showc
 ├── js/
 │   └── main.js        # JavaScript functionality
 ├── assets/            # Images and downloadable files
-│   ├── placeholder-portrait.jpg
-│   ├── project1-placeholder.jpg
-│   ├── project2-placeholder.jpg
-│   ├── project3-placeholder.jpg
-│   └── Marouane_Ait_El_Faqir_CV.pdf
+│   └── machine-learning-Engineer.pdf
 └── README.md          # This file
 ```
 
@@ -34,14 +30,13 @@ A modern, responsive personal portfolio website for Marouane Ait El Faqir, showc
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/MarouaneAEF/MarouaneAEF.github.io.git
-   cd MarouaneAEF.github.io
+   git clone https://github.com/MarouaneAEF/marouane.ait-el-faqir.github.io
+   cd marouane.ait-el-faqir.github.io
    ```
 
 2. Replace placeholder content:
    - Update text content in `index.html`
-   - Replace images in the `assets/` directory
-   - Add your CV as `assets/Marouane_Ait_El_Faqir_CV.pdf`
+   - Add your CV as `your CV.pdf`
    - Update project links and descriptions
 
 3. Deploy to GitHub Pages:
@@ -65,7 +60,6 @@ The color scheme can be modified in `styles/main.css`. Look for the `:root` sect
 ```
 
 ### Content
-- **Profile Image**: Replace `assets/placeholder-portrait.jpg` with your photo
 - **CV**: Replace `assets/Marouane_Ait_El_Faqir_CV.pdf` with your CV
 - **Project Images**: Replace project placeholder images in the `assets/` directory
 - **Contact Form**: Update the form action in `index.html` to point to your backend API
