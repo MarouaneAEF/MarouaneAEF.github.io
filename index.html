@@ -28,6 +28,25 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
             </ul>
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </label>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -106,6 +125,47 @@
                     <a href="assets/cv-marouane-1741478147.pdf" class="cv-button" download="Marouane_Ait_El_Faqir_CV.pdf">Download My CV</a>
                 </div>
             </div>
+            
+            <div class="timeline-section">
+                <h3>Professional Experience</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2022 - Present</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Machine Learning Engineer</h4>
+                            <p class="timeline-company">AI Research Lab</p>
+                            <p>Developed self-supervised learning architectures for computer vision tasks. Specialized in generative models including VAEs and GANs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2020 - 2022</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Data Scientist</h4>
+                            <p class="timeline-company">Tech Solutions Inc.</p>
+                            <p>Implemented anomaly detection systems using deep learning approaches. Worked on unsupervised learning models for pattern recognition.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2018 - 2020</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>ML Research Assistant</h4>
+                            <p class="timeline-company">University Research Center</p>
+                            <p>Contributed to research in self-supervised learning methods. Published papers on mixture models and representation learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -142,9 +202,20 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
+            
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                    <button class="filter-btn" data-filter="gan">GAN</button>
+                    <button class="filter-btn" data-filter="vae">VAE</button>
+                    <button class="filter-btn" data-filter="computer-vision">Computer Vision</button>
+                </div>
+            </div>
+            
             <div class="portfolio-grid">
                 <!-- GMM-VAE -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="deep-learning vae">
                     <div class="portfolio-info">
                         <h3>GMM-VAE</h3>
                         <p>Gaussian Mixture Variational Autoencoder implementing a VAE variant with Gaussian Mixture as prior distribution.</p>
@@ -158,7 +229,7 @@
                 </div>
                 
                 <!-- BiGAN Anomaly Detector -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="deep-learning gan">
                     <div class="portfolio-info">
                         <h3>BiGAN Anomaly Detector</h3>
                         <p>Advanced anomaly detection system based on Bidirectional Generative Adversarial Network architecture.</p>
@@ -172,7 +243,7 @@
                 </div>
                 
                 <!-- L1BSR -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="deep-learning computer-vision">
                     <div class="portfolio-info">
                         <h3>L1BSR - Sentinel-2 Super-Resolution</h3>
                         <p>Self-Supervised Single Image Super-Resolution for Sentinel-2 L1B Imagery.</p>
@@ -186,7 +257,7 @@
                 </div>
                 
                 <!-- VAE-GAN -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="deep-learning vae gan">
                     <div class="portfolio-info">
                         <h3>VAE-GAN</h3>
                         <p>Implementation of VAE-GAN architecture based on the paper "Autoencoding beyond pixels using a learned similarity metric".</p>
@@ -201,7 +272,7 @@
                 </div>
                 
                 <!-- Neural E-M -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="deep-learning">
                     <div class="portfolio-info">
                         <h3>Neural E-M</h3>
                         <p>Implementation of "Neural Expectation-Maximization" for unsupervised learning of latent variables.</p>
@@ -215,7 +286,7 @@
                 </div>
                 
                 <!-- Keras Tuner Works -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="deep-learning">
                     <div class="portfolio-info">
                         <h3>Keras Tuner Works</h3>
                         <p>Training discriminative models on time series data with hyperparameter tuning using KerasTuner library.</p>

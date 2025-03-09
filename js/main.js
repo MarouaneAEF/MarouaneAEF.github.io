@@ -111,4 +111,40 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements that should animate on scroll
 document.querySelectorAll('.service-card, .portfolio-item, .about-image').forEach(el => {
     observer.observe(el);
+});
+
+// Dark mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+
+// Set theme based on user preference or saved setting
+const setTheme = () => {
+    // Check local storage first
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+        themeToggle.checked = savedTheme === 'dark';
+    } else {
+        // If no saved preference, check system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            themeToggle.checked = true;
+        }
+    }
+};
+
+// Call the function to set the theme on page load
+setTheme();
+
+// Toggle theme when button is clicked
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
 }); 
