@@ -355,37 +355,5 @@
     <button id="scroll-to-top" class="scroll-top">↑</button>
 
     <script src="js/main.js"></script>
-    
-    <!-- Temporary diagnostic script to identify empty images -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Log all images in the portfolio section
-            const portfolioSection = document.querySelector('.portfolio');
-            const images = portfolioSection.querySelectorAll('img');
-            
-            console.log('Images in portfolio section:', images.length);
-            
-            // Check each image
-            images.forEach((img, index) => {
-                console.log(`Image ${index + 1}:`, {
-                    src: img.src,
-                    alt: img.alt,
-                    width: img.width,
-                    height: img.height,
-                    parentElement: img.parentElement.tagName,
-                    parentClass: img.parentElement.className
-                });
-                
-                // Highlight empty images
-                if (!img.src || img.src === window.location.href || img.src.endsWith('/')) {
-                    img.style.border = '3px solid red';
-                    console.log('Empty image found!', img);
-                    
-                    // Add a data attribute to make it easier to find
-                    img.setAttribute('data-empty-image', 'true');
-                }
-            });
-        });
-    </script>
 </body>
 </html> 
