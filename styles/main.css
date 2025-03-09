@@ -845,6 +845,22 @@ h3 {
     margin-bottom: 1rem;
 }
 
+.timeline-achievements {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+}
+
+.timeline-achievements li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.timeline-achievements li:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .timeline:before {
         left: 40px;
