@@ -350,33 +350,36 @@ h3 {
 
 /* Portfolio Section */
 .portfolio {
-    padding: 100px 0;
+    padding: 80px 0;
     background: var(--background);
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
+/* New simplified portfolio items with no image support */
 .portfolio-item {
-    display: flex;
-    flex-direction: column;
     background: var(--card-background);
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.5s ease;
     animation-fill-mode: both;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Animation delays */
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
 .portfolio-item:nth-child(2) { animation-delay: 0.2s; }
 .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
@@ -386,41 +389,48 @@ h3 {
 
 .portfolio-info {
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
 }
 
 .portfolio-info p {
-    margin-bottom: 1.5rem;
     color: var(--light-text);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin-bottom: 1.5rem;
 }
 
 .tech-stack span {
-    padding: 0.25rem 0.75rem;
-    background: var(--light-background);
-    border-radius: 50px;
-    font-size: 0.8rem;
+    background: rgba(74, 144, 226, 0.1);
+    color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
 }
 
 .project-link {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background: var(--primary-color);
     color: white;
+    background: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: var(--transition);
+    font-weight: 500;
+    transition: background 0.3s ease;
+    text-align: center;
+    align-self: flex-start;
 }
 
 .project-link:hover {
