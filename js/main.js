@@ -147,4 +147,35 @@ themeToggle.addEventListener('change', () => {
         htmlElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
     }
+});
+
+// Portfolio filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+// Add click event to filter buttons
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Add active class to current button
+        btn.classList.add('active');
+        
+        // Get filter value
+        const filterValue = btn.getAttribute('data-filter');
+        
+        // Filter items
+        portfolioItems.forEach(item => {
+            const categories = item.getAttribute('data-category');
+            
+            if (filterValue === 'all' || categories.includes(filterValue)) {
+                item.classList.remove('hide');
+            } else {
+                item.classList.add('hide');
+            }
+        });
+    });
 }); 
