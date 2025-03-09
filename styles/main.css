@@ -937,4 +937,12 @@ h3 {
     padding: 0;
     margin: 0;
     overflow: hidden;
+}
+
+/* Fix for any empty images */
+.portfolio-item img:not([src]),
+.portfolio-item img[src=""],
+.portfolio-item img[src="#"],
+.portfolio-item img[src="/"] {
+    display: none !important;
 } 
