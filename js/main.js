@@ -20,24 +20,6 @@ navLinksItems.forEach(item => {
     });
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const formProps = Object.fromEntries(formData);
-
-    // Here you would typically send the form data to a server
-    // For now, we'll just log it to the console
-    console.log('Form submitted:', formProps);
-
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-});
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -136,17 +118,20 @@ const setTheme = () => {
 };
 
 // Call the function to set the theme on page load
-setTheme();
+document.addEventListener('DOMContentLoaded', () => {
+    setTheme();
+});
 
 // Toggle theme when button is clicked
-themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
+themeToggle.addEventListener('change', function() {
+    if (this.checked) {
         htmlElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
     } else {
         htmlElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
     }
+    console.log('Theme changed to:', this.checked ? 'dark' : 'light');
 });
 
 // Portfolio filtering
