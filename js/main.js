@@ -95,43 +95,43 @@ document.querySelectorAll('.service-card, .portfolio-item, .about-image').forEac
     observer.observe(el);
 });
 
-// Dark mode toggle
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
-
-// Set theme based on user preference or saved setting
-const setTheme = () => {
-    // Check local storage first
-    const savedTheme = localStorage.getItem('theme');
+// Dark mode toggle - completely rewritten
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
     
-    if (savedTheme) {
-        htmlElement.setAttribute('data-theme', savedTheme);
-        themeToggle.checked = savedTheme === 'dark';
-    } else {
-        // If no saved preference, check system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-            htmlElement.setAttribute('data-theme', 'dark');
-            themeToggle.checked = true;
+    // Function to set theme
+    function setTheme(isDark) {
+        if (isDark) {
+            html.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            if (themeToggle) themeToggle.checked = true;
+        } else {
+            html.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            if (themeToggle) themeToggle.checked = false;
         }
     }
-};
-
-// Call the function to set the theme on page load
-document.addEventListener('DOMContentLoaded', () => {
-    setTheme();
-});
-
-// Toggle theme when button is clicked
-themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-        htmlElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        htmlElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+    
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark') {
+        setTheme(true);
+    } else if (savedTheme === 'light') {
+        setTheme(false);
+    } else if (prefersDark) {
+        setTheme(true);
     }
-    console.log('Theme changed to:', this.checked ? 'dark' : 'light');
+    
+    // Add event listener to toggle
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            setTheme(this.checked);
+            console.log('Theme switched to:', this.checked ? 'dark' : 'light');
+        });
+    }
 });
 
 // Portfolio filtering
