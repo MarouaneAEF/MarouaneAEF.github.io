@@ -27,7 +27,7 @@ A responsive personal portfolio website, showcasing my professional experience, 
 ├── js/
 │   └── main.js         # JavaScript functionality
 ├── assets/             # Images and downloadable files
-│   ├── cv-marouane-1741478147.pdf  # CV file
+│   ├── cv-datascience-updated.pdf  # CV file
 │   ├── favicon.ico     # Website favicon
 │   └── icons/          # SVG icons for social media
 │       ├── github.svg
