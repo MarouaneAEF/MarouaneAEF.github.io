@@ -216,7 +216,19 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact.emailCta': 'Send an email',
             'contact.linkedinCta': 'View my LinkedIn profile',
             'footer.text': '&copy; 2024 Marouane Ait El Faqir. All rights reserved.',
-            'footer.downloadCv': 'Download CV'
+            'footer.downloadCv': 'Download CV',
+            'looking.title': 'What I\u2019m looking for',
+            'looking.text': 'I am interested in roles and missions where advanced machine learning is applied to high-impact domains such as space, defense and embedded systems.',
+            'looking.b1': 'R&D or engineering positions focused on deep learning, probabilistic modelling and self-supervised learning.',
+            'looking.b2': 'Projects involving satellite imagery, orbital dynamics or critical systems monitoring.',
+            'looking.b3': 'Collaborations where machine learning bridges research ideas and operational constraints.',
+            'featured.title': 'Featured projects',
+            'featured.l1bsr.title': 'L1BSR \u2013 Sentinel\u20112 Super\u2011Resolution',
+            'featured.l1bsr.text': 'Self-supervised super-resolution for Sentinel\u20112 imagery, improving spatial resolution for downstream Earth observation tasks.',
+            'featured.bigan.title': 'BiGAN Anomaly Detector',
+            'featured.bigan.text': 'Bidirectional GAN-based anomaly detection system for complex, high-dimensional data distributions.',
+            'featured.vaeanim.title': 'VAE Paper With Animation',
+            'featured.vaeanim.text': 'Didactic implementation of Variational Autoencoders with animated visualizations of the latent space.'
         },
         fr: {
             'nav.home': 'Accueil',
@@ -294,7 +306,19 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact.emailCta': 'Envoyer un email',
             'contact.linkedinCta': 'Voir mon profil LinkedIn',
             'footer.text': '&copy; 2024 Marouane Ait El Faqir. Tous droits réservés.',
-            'footer.downloadCv': 'Télécharger le CV'
+            'footer.downloadCv': 'Télécharger le CV',
+            'looking.title': 'Ce que je recherche',
+            'looking.text': "Je suis intéressé par des postes et missions où des techniques avancées de machine learning sont appliquées à des domaines à fort impact comme l’espace, la défense et les systèmes embarqués.",
+            'looking.b1': 'Postes R&D ou d’ingénierie centrés sur le deep learning, la modélisation probabiliste et l’apprentissage auto-supervisé.',
+            'looking.b2': 'Projets impliquant imagerie satellitaire, dynamique orbitale ou surveillance de systèmes critiques.',
+            'looking.b3': 'Collaborations où le machine learning fait le lien entre idées de recherche et contraintes opérationnelles.',
+            'featured.title': 'Projets mis en avant',
+            'featured.l1bsr.title': 'L1BSR – Super‑résolution Sentinel‑2',
+            'featured.l1bsr.text': 'Super‑résolution auto‑supervisée pour imagerie Sentinel‑2, améliorant la résolution spatiale pour les tâches d’observation de la Terre.',
+            'featured.bigan.title': 'Détecteur d’anomalies BiGAN',
+            'featured.bigan.text': 'Système de détection d’anomalies basé sur un GAN bidirectionnel pour des données complexes de grande dimension.',
+            'featured.vaeanim.title': 'VAE Paper With Animation',
+            'featured.vaeanim.text': 'Implémentation didactique de VAE avec visualisations animées de l’espace latent.'
         }
     };
 
