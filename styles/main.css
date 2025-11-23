@@ -11,6 +11,8 @@
     --card-background: #ffffff;
     --nav-background: rgba(255, 255, 255, 0.95);
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --footer-background: #111827;
+    --footer-text: #f9fafb;
     --transition: all 0.3s ease;
 }
 
@@ -26,6 +28,8 @@
     --card-background: #1e1e1e;
     --nav-background: rgba(18, 18, 18, 0.95);
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --footer-background: #020617;
+    --footer-text: #e5e7eb;
 }
 
 * {
@@ -507,8 +511,8 @@ h3 {
 /* Footer */
 .footer {
     padding: 2rem 0;
-    background: var(--text-color);
-    color: white;
+    background: var(--footer-background);
+    color: var(--footer-text);
 }
 
 .footer-content {

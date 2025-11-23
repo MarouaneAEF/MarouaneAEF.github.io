@@ -73,6 +73,8 @@ The color scheme can be modified in `styles/main.css`. Look for the `:root` sect
     --card-background: #ffffff;
     --nav-background: rgba(255, 255, 255, 0.95);
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --footer-background: #111827;
+    --footer-text: #f9fafb;
     --transition: all 0.3s ease;
 }
 
@@ -88,6 +90,8 @@ The color scheme can be modified in `styles/main.css`. Look for the `:root` sect
     --card-background: #1e1e1e;
     --nav-background: rgba(18, 18, 18, 0.95);
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --footer-background: #020617;
+    --footer-text: #e5e7eb;
 }
 ```
 
