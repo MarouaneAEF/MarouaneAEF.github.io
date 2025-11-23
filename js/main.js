@@ -13,8 +13,10 @@ if (hamburger) {
 // Close mobile menu when clicking on a nav link
 navLinksItems.forEach(item => {
     item.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) {
+        if (navLinks && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
+        }
+        if (hamburger) {
             hamburger.classList.remove('active');
         }
     });
