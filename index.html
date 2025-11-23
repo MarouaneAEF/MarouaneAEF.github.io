@@ -23,11 +23,16 @@
         <div class="container">
             <div class="logo">MAF</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#home" data-i18n-key="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n-key="nav.about">About</a></li>
+                <li><a href="#services" data-i18n-key="nav.services">Services</a></li>
+                <li><a href="#portfolio" data-i18n-key="nav.portfolio">Portfolio</a></li>
             </ul>
+            <div class="lang-switch" aria-label="Language switch">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <span class="lang-separator">/</span>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
             <div class="theme-switch">
                 <input type="checkbox" id="theme-toggle">
                 <label for="theme-toggle" aria-label="Toggle dark mode">
@@ -60,8 +65,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Marouane Ait El Faqir</h1>
-                <h2>Machine Learning Engineer</h2>
-                <p class="tagline">Turning data into intelligent solutions</p>
+                <h2 data-i18n-key="hero.subtitle">Machine Learning Engineer</h2>
+                <p class="tagline" data-i18n-key="hero.tagline">Turning data into intelligent solutions</p>
                 <div class="social-links">
                     <a href="https://github.com/MarouaneAEF" target="_blank" class="social-link">
                         <img src="assets/icons/github.svg" alt="GitHub" class="social-icon">
@@ -77,12 +82,12 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>About</h2>
+            <h2 data-i18n-key="about.title">About</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>As a Machine Learning Engineer with specialized expertise in deep learning architectures, I solve complex problems through innovative machine learning solutions. My focus on self-supervised techniques delivers robust results in data-constrained environments.</p>
+                    <p data-i18n-key="about.intro">As a Machine Learning Engineer with specialized expertise in deep learning architectures, I solve complex problems through innovative machine learning solutions. My focus on self-supervised techniques delivers robust results in data-constrained environments.</p>
                     <div class="skills">
-                        <h3>Skills</h3>
+                        <h3 data-i18n-key="about.skillsTitle">Skills</h3>
                         <div class="skill-progress">
                             <div class="skill-item">
                                 <span class="skill-name">Python</span>
@@ -204,20 +209,20 @@
     <!-- Application Domains Section -->
     <section id="domains" class="domains">
         <div class="container">
-            <h2>Application Domains</h2>
-            <p class="domains-intro">I apply machine learning and optimization techniques to demanding real-world environments such as space, defense, and embedded systems.</p>
+            <h2 data-i18n-key="domains.title">Application Domains</h2>
+            <p class="domains-intro" data-i18n-key="domains.intro">I apply machine learning and optimization techniques to demanding real-world environments such as space, defense, and embedded systems.</p>
             <div class="domains-grid">
                 <div class="domain-card">
-                    <h3>Space & Earth Observation</h3>
-                    <p>Super-resolution for Sentinel-2 optical imagery, satellite maneuver modelling, and contributions to Python libraries for the Copernicus (ESA/CNES) program.</p>
+                    <h3 data-i18n-key="domains.space.title">Space & Earth Observation</h3>
+                    <p data-i18n-key="domains.space.text">Super-resolution for Sentinel-2 optical imagery, satellite maneuver modelling, and contributions to Python libraries for the Copernicus (ESA/CNES) program.</p>
                 </div>
                 <div class="domain-card">
-                    <h3>Defense & Security</h3>
-                    <p>Predictive models for orbital dynamics, risk analysis and anomaly detection for critical systems in collaboration with DGA and national agencies.</p>
+                    <h3 data-i18n-key="domains.defense.title">Defense & Security</h3>
+                    <p data-i18n-key="domains.defense.text">Predictive models for orbital dynamics, risk analysis and anomaly detection for critical systems in collaboration with DGA and national agencies.</p>
                 </div>
                 <div class="domain-card">
-                    <h3>Embedded Electronics & Sensors</h3>
-                    <p>Embedded algorithms for measurement instruments, probabilistic modelling for thermal cameras, and real-time signal processing.</p>
+                    <h3 data-i18n-key="domains.embedded.title">Embedded Electronics & Sensors</h3>
+                    <p data-i18n-key="domains.embedded.text">Embedded algorithms for measurement instruments, probabilistic modelling for thermal cameras, and real-time signal processing.</p>
                 </div>
             </div>
         </div>
@@ -226,27 +231,27 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Services</h2>
+            <h2 data-i18n-key="services.title">Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
-                    <h3>Deep Learning Architecture Design</h3>
-                    <p>Custom deep learning architectures including VAEs, GANs, and mixture models tailored to your specific needs.</p>
+                    <h3 data-i18n-key="services.card1.title">Deep Learning Architecture Design</h3>
+                    <p data-i18n-key="services.card1.text">Custom deep learning architectures including VAEs, GANs, and mixture models tailored to your specific needs.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
-                    <h3>Anomaly Detection Systems</h3>
-                    <p>Development of robust anomaly detection solutions using state-of-the-art deep learning approaches.</p>
+                    <h3 data-i18n-key="services.card2.title">Anomaly Detection Systems</h3>
+                    <p data-i18n-key="services.card2.text">Development of robust anomaly detection solutions using state-of-the-art deep learning approaches.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💡</div>
-                    <h3>ML Model Optimization</h3>
-                    <p>Hyperparameter tuning and model optimization for improved performance and efficiency.</p>
+                    <h3 data-i18n-key="services.card3.title">ML Model Optimization</h3>
+                    <p data-i18n-key="services.card3.text">Hyperparameter tuning and model optimization for improved performance and efficiency.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📚</div>
-                    <h3>ML Research & Development</h3>
-                    <p>Implementation of research papers and development of novel machine learning solutions.</p>
+                    <h3 data-i18n-key="services.card4.title">ML Research & Development</h3>
+                    <p data-i18n-key="services.card4.text">Implementation of research papers and development of novel machine learning solutions.</p>
                 </div>
             </div>
         </div>
@@ -255,7 +260,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Portfolio</h2>
+            <h2 data-i18n-key="portfolio.title">Portfolio</h2>
             
             <div class="filter-container">
                 <div class="filter-buttons">
@@ -395,11 +400,11 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contact</h2>
-            <p>For any opportunity, consulting mission or collaboration, feel free to contact me directly.</p>
+            <h2 data-i18n-key="contact.title">Contact</h2>
+            <p data-i18n-key="contact.text">For any opportunity, consulting mission or collaboration, feel free to contact me directly.</p>
             <div class="contact-actions">
-                <a href="mailto:m.aitelfaqir@gmail.com?subject=Contact%20from%20website" class="btn-primary">Send an email</a>
-                <a href="https://www.linkedin.com/in/marouane-a-87938ab9/" target="_blank" class="btn-secondary">View my LinkedIn profile</a>
+                <a href="mailto:m.aitelfaqir@gmail.com?subject=Contact%20from%20website" class="btn-primary" data-i18n-key="contact.emailCta">Send an email</a>
+                <a href="https://www.linkedin.com/in/marouane-a-87938ab9/" target="_blank" class="btn-secondary" data-i18n-key="contact.linkedinCta">View my LinkedIn profile</a>
             </div>
         </div>
     </section>

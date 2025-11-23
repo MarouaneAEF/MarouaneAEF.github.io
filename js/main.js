@@ -97,7 +97,7 @@ document.querySelectorAll('.service-card, .portfolio-item, .about-image').forEac
     observer.observe(el);
 });
 
-// Dark mode toggle - completely rewritten
+// Dark mode toggle + language switch
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
@@ -132,6 +132,109 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', function() {
             setTheme(this.checked);
             console.log('Theme switched to:', this.checked ? 'dark' : 'light');
+        });
+    }
+
+    // Language switcher
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const translatableElements = document.querySelectorAll('[data-i18n-key]');
+
+    const translations = {
+        en: {
+            'nav.home': 'Home',
+            'nav.about': 'About',
+            'nav.services': 'Services',
+            'nav.portfolio': 'Portfolio',
+            'hero.subtitle': 'Machine Learning Engineer',
+            'hero.tagline': 'Turning data into intelligent solutions',
+            'about.title': 'About',
+            'about.intro': 'As a Machine Learning Engineer with specialized expertise in deep learning architectures, I solve complex problems through innovative machine learning solutions. My focus on self-supervised techniques delivers robust results in data-constrained environments.',
+            'about.skillsTitle': 'Skills',
+            'domains.title': 'Application Domains',
+            'domains.intro': 'I apply machine learning and optimization techniques to demanding real-world environments such as space, defense, and embedded systems.',
+            'domains.space.title': 'Space & Earth Observation',
+            'domains.space.text': 'Super-resolution for Sentinel-2 optical imagery, satellite maneuver modelling, and contributions to Python libraries for the Copernicus (ESA/CNES) program.',
+            'domains.defense.title': 'Defense & Security',
+            'domains.defense.text': 'Predictive models for orbital dynamics, risk analysis and anomaly detection for critical systems in collaboration with DGA and national agencies.',
+            'domains.embedded.title': 'Embedded Electronics & Sensors',
+            'domains.embedded.text': 'Embedded algorithms for measurement instruments, probabilistic modelling for thermal cameras, and real-time signal processing.',
+            'services.title': 'Services',
+            'services.card1.title': 'Deep Learning Architecture Design',
+            'services.card1.text': 'Custom deep learning architectures including VAEs, GANs, and mixture models tailored to your specific needs.',
+            'services.card2.title': 'Anomaly Detection Systems',
+            'services.card2.text': 'Development of robust anomaly detection solutions using state-of-the-art deep learning approaches.',
+            'services.card3.title': 'ML Model Optimization',
+            'services.card3.text': 'Hyperparameter tuning and model optimization for improved performance and efficiency.',
+            'services.card4.title': 'ML Research & Development',
+            'services.card4.text': 'Implementation of research papers and development of novel machine learning solutions.',
+            'portfolio.title': 'Portfolio',
+            'contact.title': 'Contact',
+            'contact.text': 'For any opportunity, consulting mission or collaboration, feel free to contact me directly.',
+            'contact.emailCta': 'Send an email',
+            'contact.linkedinCta': 'View my LinkedIn profile'
+        },
+        fr: {
+            'nav.home': 'Accueil',
+            'nav.about': 'À propos',
+            'nav.services': 'Services',
+            'nav.portfolio': 'Portfolio',
+            'hero.subtitle': 'Ingénieur Machine Learning',
+            'hero.tagline': 'Transformer les données en solutions intelligentes',
+            'about.title': 'À propos',
+            'about.intro': 'Ingénieur Machine Learning spécialisé dans les architectures de deep learning, je conçois des solutions d’apprentissage automatique pour adresser des problèmes complexes en environnement opérationnel. Mon travail se concentre sur les approches auto-supervisées en contexte de données limitées.',
+            'about.skillsTitle': 'Compétences',
+            'domains.title': "Domaines d'application",
+            'domains.intro': "J’applique des techniques d’apprentissage automatique et d’optimisation à des environnements exigeants comme l’espace, la défense et les systèmes embarqués.",
+            'domains.space.title': 'Espace & Observation de la Terre',
+            'domains.space.text': 'Super-résolution pour imagerie optique Sentinel‑2, modélisation de manœuvres satellitaires et contributions aux bibliothèques Python du programme Copernicus (ESA/CNES).',
+            'domains.defense.title': 'Défense & Sécurité',
+            'domains.defense.text': 'Modèles prédictifs pour la dynamique orbitale, analyse de risque et détection d’anomalies pour systèmes critiques en collaboration avec la DGA et des agences nationales.',
+            'domains.embedded.title': 'Électronique embarquée & Capteurs',
+            'domains.embedded.text': 'Algorithmes embarqués pour instruments de mesure, modélisation probabiliste pour caméras thermiques et traitement de signal en temps réel.',
+            'services.title': 'Services',
+            'services.card1.title': 'Conception d’architectures Deep Learning',
+            'services.card1.text': 'Conception d’architectures deep learning (VAE, GAN, modèles de mélange) adaptées à vos besoins métier.',
+            'services.card2.title': 'Systèmes de détection d’anomalies',
+            'services.card2.text': 'Développement de solutions de détection d’anomalies basées sur des approches deep learning à l’état de l’art.',
+            'services.card3.title': 'Optimisation de modèles ML',
+            'services.card3.text': "Optimisation et réglage d’hyperparamètres pour améliorer les performances et l’efficacité des modèles.",
+            'services.card4.title': 'R&D en Machine Learning',
+            'services.card4.text': 'Mise en œuvre d’articles de recherche et développement de nouvelles solutions en apprentissage automatique.',
+            'portfolio.title': 'Portfolio',
+            'contact.title': 'Contact',
+            'contact.text': 'Pour toute opportunité, mission de conseil ou collaboration, vous pouvez me contacter directement.',
+            'contact.emailCta': 'Envoyer un email',
+            'contact.linkedinCta': 'Voir mon profil LinkedIn'
+        }
+    };
+
+    function setLanguage(lang) {
+        const targetLang = lang === 'fr' ? 'fr' : 'en';
+        html.setAttribute('lang', targetLang);
+        localStorage.setItem('lang', targetLang);
+
+        translatableElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-key');
+            const value = translations[targetLang] && translations[targetLang][key];
+            if (value) {
+                el.textContent = value;
+            }
+        });
+
+        langButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === targetLang);
+        });
+    }
+
+    if (langButtons.length && translatableElements.length) {
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLanguage(savedLang);
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                setLanguage(lang);
+            });
         });
     }
 });

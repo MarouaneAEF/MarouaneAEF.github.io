@@ -132,6 +132,32 @@ h3 {
     width: 100%;
 }
 
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 1rem;
+    font-size: 0.85rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
+}
+
+.lang-btn.active {
+    color: var(--primary-color);
+}
+
+.lang-separator {
+    color: var(--light-text);
+    font-size: 0.85rem;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
