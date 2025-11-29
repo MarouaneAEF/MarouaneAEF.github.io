@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marouane.ait-el-faqir.github.io/sitemap.xml
+
+
